@@ -18,6 +18,24 @@ namespace TechJobsOO
             Value = value;
         }
 
-        // TODO: Add custom Equals(), GetHashCode(), and ToString() methods.
+        //Added custom Equals() method --CF
+        //Added GetHashCode() method --CF  //Hashcodes used to compute into arrays which are indexed
+        //Added ToString() method --CF
+
+        public override bool Equals(object obj)
+        {
+            return obj is PositionType position &&
+                Id == position.Id;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Id);
+        }
+
+        public override string ToString()
+        {
+            return Value;
+        }
     }
 }
