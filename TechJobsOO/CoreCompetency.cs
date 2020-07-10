@@ -3,9 +3,9 @@ namespace TechJobsOO
 {
     public class CoreCompetency
     {
-        private int Id { get; }
+        public int Id { get; }
         private static int nextId = 1;
-        private string Value { get; set; }
+        public string Value { get; set; }
 
         // Changed the fields to auto-implemented properties.  --CF
          
@@ -15,9 +15,9 @@ namespace TechJobsOO
             nextId++;
         }
 
-        public CoreCompetency(string v) : this()
+        public CoreCompetency(string value) : this()
         {
-            Value = v;
+            Value = value;
         }
 
         public override bool Equals(object obj)

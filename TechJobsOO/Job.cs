@@ -12,9 +12,35 @@ namespace TechJobsOO
         public PositionType JobType { get; set; }
         public CoreCompetency JobCoreCompetency { get; set; }
 
-       
-        // TODO: Add the two necessary constructors.
+        //Added constructor to initialize id field --CF 
+        //Added constructor that initalizes properties, and will used Job() to assign id to job object --CF
+        public Job()
+        {
+            Id = nextId;
+            nextId++;
+        }
+        
+        public Job(string name, string employerName, string employerLocation, string jobType, string jobCoreCompetency ) : this()
+        {
+            Name = name;
+            EmployerName.Value = employerName;
+            EmployerLocation.Value = employerLocation;
+            JobType.Value = jobType;
+            JobCoreCompetency.Value = jobCoreCompetency;
 
-        // TODO: Generate Equals() and GetHashCode() methods.
+        }
+
+        //Added Equals() method --CF
+        //Added GetHashCode() method --CF
+        public override bool Equals(object obj)
+        {
+            return obj is Job job &&
+                Id == job.Id;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Id);
+        }
     }
 }

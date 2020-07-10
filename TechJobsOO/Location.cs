@@ -13,8 +13,7 @@ namespace TechJobsOO
             nextId++;
         }
 
-        // Added a second constructor to this class that uses the 
-        //Location() constructor and sets the value of the value field. --CF
+        // Added 2nd constructor Location() class: sets value of value field. --CF
         public Location(string value) : this()
         {
             Value = value; 

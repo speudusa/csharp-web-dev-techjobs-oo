@@ -1,10 +1,10 @@
 ﻿using System;
 namespace TechJobsOO
 {
-    public class Employer
+    public class Employer 
     {
         public int Id { get; }
-        private static int nextId = 1;
+        private static int nextId = 1;  
         public string Value { get; set; }
 
         public Employer()
