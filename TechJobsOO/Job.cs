@@ -4,10 +4,10 @@ namespace TechJobsOO
     public class Job
     {
         public int Id { get; }
-        private static int nextId = 1;
+        public static int nextId = 1;
 
         public string Name { get; set; }
-        public Employer EmployerName { get; set; }
+        public Employer EmployerName { get; set; }  //employerName held by employer OBJECT
         public Location EmployerLocation { get; set; }
         public PositionType JobType { get; set; }
         public CoreCompetency JobCoreCompetency { get; set; }
@@ -20,13 +20,16 @@ namespace TechJobsOO
             nextId++;
         }
         
-        public Job(string name, string employerName, string employerLocation, string jobType, string jobCoreCompetency ) : this()
+        
+        
+        //TODO currently testing the Full Constructor
+        public Job(string name, Employer employerName, Location employerLocation, PositionType jobType, CoreCompetency jobCoreCompetency) : this()
         {
             Name = name;
-            EmployerName.Value = employerName;
-            EmployerLocation.Value = employerLocation;
-            JobType.Value = jobType;
-            JobCoreCompetency.Value = jobCoreCompetency;
+            EmployerName = employerName;
+            EmployerLocation = employerLocation;
+            JobType = jobType;
+            JobCoreCompetency = jobCoreCompetency;
 
         }
 
@@ -44,3 +47,12 @@ namespace TechJobsOO
         }
     }
 }
+
+/* DUMMY JOB
+ * Id assigned by Job() method as int
+ * Name = "Product tester"
+ * EmployerName.Value = "ACME"
+ * EmployerLocation.Value = "Desert"
+ * JobType.Value = "Quality control"
+ * JobCoreCompetency.Value = "Persistence"
+ * */

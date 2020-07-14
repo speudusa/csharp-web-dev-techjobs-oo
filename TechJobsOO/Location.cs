@@ -21,8 +21,8 @@ namespace TechJobsOO
 
         public override bool Equals(object obj)
         {
-            return obj is Location location &&
-                   Id == location.Id;
+            return obj is Location employerLocation &&
+                   Id == employerLocation.Id;
         }
 
         public override int GetHashCode()

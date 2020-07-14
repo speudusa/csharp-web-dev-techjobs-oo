@@ -20,8 +20,8 @@ namespace TechJobsOO
 
         public override bool Equals(object obj)
         {
-            return obj is Employer employer &&
-                   Id == employer.Id;
+            return obj is Employer employerName &&
+                   Id == employerName.Id;
         }
 
         public override int GetHashCode()
