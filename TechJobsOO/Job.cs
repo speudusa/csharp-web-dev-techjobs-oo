@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace TechJobsOO
 {
     public class Job
@@ -19,10 +21,8 @@ namespace TechJobsOO
             Id = nextId;
             nextId++;
         }
-        
-        
-        
-        //TODO currently testing the Full Constructor
+                        
+        //Tested Full Constructor --CF
         public Job(string name, Employer employerName, Location employerLocation, PositionType jobType, CoreCompetency jobCoreCompetency) : this()
         {
             Name = name;
@@ -30,8 +30,25 @@ namespace TechJobsOO
             EmployerLocation = employerLocation;
             JobType = jobType;
             JobCoreCompetency = jobCoreCompetency;
-
         }
+
+        //Added the ToString() method --CF
+
+        public override string ToString()               //override to create our my own methods
+        {
+            string thing = "Data not available.";
+            string nameCheck = Name; 
+            string employerCheck = EmployerName.Value; 
+            string locationCheck = EmployerLocation.Value;
+            string jobtypeCheck = JobType.Value;
+            string coreTypeCheck = JobCoreCompetency.Value;
+
+
+            return $"ID: {Id} \n Name: {(!string.IsNullOrEmpty(nameCheck) ? nameCheck : thing)} \n Employer: {(!string.IsNullOrEmpty(employerCheck) ? employerCheck : thing)} \n Location: {(!string.IsNullOrEmpty(locationCheck) ? locationCheck : thing)} \n  Position Type: {(!string.IsNullOrEmpty(jobtypeCheck) ? jobtypeCheck : thing)} \n Core Competency: {(!string.IsNullOrEmpty(coreTypeCheck) ? coreTypeCheck : thing)} \n";    
+            
+        }              
+        //ternary operators  1 (bool) ? 2 (true --> return new message) : 3 false (return as is)
+
 
         //Added Equals() method --CF
         //Added GetHashCode() method --CF
@@ -45,14 +62,8 @@ namespace TechJobsOO
         {
             return HashCode.Combine(Id);
         }
+
+        
     }
 }
 
-/* DUMMY JOB
- * Id assigned by Job() method as int
- * Name = "Product tester"
- * EmployerName.Value = "ACME"
- * EmployerLocation.Value = "Desert"
- * JobType.Value = "Quality control"
- * JobCoreCompetency.Value = "Persistence"
- * */
